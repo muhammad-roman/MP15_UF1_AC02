@@ -31,9 +31,9 @@ def traductor(entrada_csv, sortida_csv, traduccio_cap, traduccio_position):
     aler = 0
     ala_pivot = 0
     pivot = 0
-    men20_29 = 0
-    men30_39 = 0
-    men40 = 0
+    edat20_29 = 0
+    edat30_39 = 0
+    edat40 = 0
 
     with open(entrada_csv, 'r', newline='') as f_in, open(sortida_csv, 'w', newline='') as f_out:
         csv_reader = csv.reader(f_in, delimiter=';')
@@ -76,11 +76,11 @@ def traductor(entrada_csv, sortida_csv, traduccio_cap, traduccio_position):
 
             #e edades  20-29,30-39,>40    
             if int(fila[-1]) >= 20 and int(fila[-1]) <30:
-                men20_29 = men20_29 +1
+                edat20_29 = edat20_29 +1
             if int(fila[-1]) >= 30 and int(fila[-1]) <40 :
-                men30_39 = men30_39 +1
+                edat30_39 = edat30_39 +1
             if int(fila[-1]) >= 40:
-                men40 = men40 +1
+                edat40 = edat40 +1
 
       
             csv_writer.writerow(fila)
@@ -93,9 +93,9 @@ def traductor(entrada_csv, sortida_csv, traduccio_cap, traduccio_position):
         print ("Hi ha " +str(aler)+" alers")
         print ("Hi ha " +str(ala_pivot)+" ala pivots")
         print ("Hi ha " +str(pivot)+" pivots")
-        print ("Hi ha " +str(men20_29)+" jugadors entre 20 i 29 anys")
-        print ("Hi ha " +str(men30_39)+" jugadors entre 30 i 39 anys")
-        print ("Hi ha " +str(men40)+" jugadors majors que 40 anys")
+        print ("Hi ha " +str(edat20_29)+" jugadors entre 20 i 29 anys")
+        print ("Hi ha " +str(edat30_39)+" jugadors entre 30 i 39 anys")
+        print ("Hi ha " +str(edat40)+" jugadors majors que 40 anys")
 
 
 
@@ -125,3 +125,4 @@ def main():
 
 
 main()
+
